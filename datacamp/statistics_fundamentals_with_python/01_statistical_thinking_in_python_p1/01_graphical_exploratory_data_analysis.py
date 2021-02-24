@@ -79,5 +79,5 @@ def comparison_of_ecdfs():
 
 #plotting__a_histogram_of_iris_data()
 #bee_swarm_plot()
-#plotting_ecdf()
-comparison_of_ecdfs()
+plotting_ecdf()
+#comparison_of_ecdfs()

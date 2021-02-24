@@ -84,6 +84,21 @@ def relationship_between_binomial_and_poisson_distribution():
         std = np.std(samples_binomial)
         print(f'n = {i} Binomial: {mean} {std}')
 
+def relationship_between_binomial_and_poisson_distribution2(): 
+    samples_poisson = np.random.poisson(2.5, size=10000)
+    print('Poisson:     ', np.mean(samples_poisson), np.std(samples_poisson))
+
+    # poisson distribution can approximate binomial distribution if n > 20 and p <= 0.05
+    n = [5, 10, 20, 100]
+    p = [0.5, 0.25, 0.125, 0.025]
+
+    for i in range(4): 
+        samples_binomial = np.random.binomial(n[i], p[i], size=10000)
+        mean = np.mean(samples_binomial)
+        std = np.std(samples_binomial)
+        print(f'n = {i} Binomial: {mean} {std}')
+
+
 def was_2015_anomalous(): 
     n_nohitters = np.random.poisson(251/115, size=10000)
     n_large = np.sum(n_nohitters >= 7)
@@ -93,7 +108,8 @@ def was_2015_anomalous():
 #generating_random_numbers_using_np_random()
 #how_many_defaults()
 #will_the_bank_fail()
-sampling_out_of_binomial_distribution()
+#sampling_out_of_binomial_distribution()
 #plotting_the_binomial_pmf()
 #relationship_between_binomial_and_poisson_distribution()
+relationship_between_binomial_and_poisson_distribution2()
 #was_2015_anomalous()
