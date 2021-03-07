@@ -1,5 +1,6 @@
 # Files to  ignore
 *.pdf
+yaoshi.txt
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
