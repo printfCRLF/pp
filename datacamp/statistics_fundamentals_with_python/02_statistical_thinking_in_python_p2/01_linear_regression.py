@@ -76,9 +76,9 @@ def linear_regression_on_all_anscombe_data():
 
 #eda_of_literacy_fertility_data()
 #linear_regression()
-#how_is_it_optimal()
+how_is_it_optimal()
 #linear_regression_on_appropriate_anscombe_data()
-linear_regression_on_all_anscombe_data()
+#linear_regression_on_all_anscombe_data()
 
 
 
