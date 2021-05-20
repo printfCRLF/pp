@@ -36,6 +36,7 @@ def standard_error_of_mean():
     _ = plt.ylabel('PDF')
     plt.show()
 
+
 def replicates_of_variance(): 
     bs_replicates = draw_bs_reps(rainfall, np.var, 10000)
     bs_replicates = bs_replicates / 100
@@ -45,9 +46,16 @@ def replicates_of_variance():
     _ = plt.ylabel('PDF')
     plt.show()
 
+    var = np.var(rainfall)
+    print('variance of the sample data', var)
+
+    bs_replicates = draw_bs_reps(rainfall, np.var, 10000)
+    var_bs = np.mean(bs_replicates)
+    print('mean of variance of bootstrap replicates', var_bs)
+    ### The values aren't equal. bs_replicates is not normally distributed, as it has a longer tail to the right. 
+
+
 def confidence_interval_on_rate_of_no_hitters(): 
-
-
     bs_replicates = draw_bs_reps(nohitter_times, np.mean, 10000)
     conf_int = np.percentile(bs_replicates, [2.5, 97.5])
 
@@ -59,6 +67,7 @@ def confidence_interval_on_rate_of_no_hitters():
     _ = plt.ylabel('PDF')
     plt.show()
 
+
 def pairs_bootstrap_of_literacy_fertility(): 
     bs_slope_reps, bs_intercept_reps = draw_bs_pairs_linreg(illiteracy, fertility, 1000)
     print(np.percentile(bs_slope_reps, [2.5, 97.5]))
@@ -67,6 +76,7 @@ def pairs_bootstrap_of_literacy_fertility():
     _ = plt.xlabel('slope')
     _ = plt.ylabel('PDF')
     plt.show()
+
 
 def plotting_bootstrap_regressions(): 
     bs_slope_reps, bs_intercept_reps = draw_bs_pairs_linreg(illiteracy, fertility, 1000)

@@ -83,7 +83,7 @@ def distribution_of_no_hitters_and_cycles():
 
 
 #the_normal_pdf()
-#the_normal_cdf()
+the_normal_cdf()
 #are_belmont_stakes_normally_distributed()
 #chances_are_faster_than_secretariat()
-distribution_of_no_hitters_and_cycles()
+#distribution_of_no_hitters_and_cycles()

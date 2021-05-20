@@ -6,7 +6,8 @@ import seaborn as sns
 from util import draw_perm_reps, diff_of_means, pearson_r, ecdf, draw_bs_reps
 from data import nht_dead, nht_live, illiteracy, fertility, control, treated
 
-sns.set(),
+sns.set()
+
 
 def the_votes_for_the_civil_rights_acts(): 
     # Construct arrays of data: dems, reps
@@ -25,11 +26,6 @@ def the_votes_for_the_civil_rights_acts():
     p = np.sum(perm_replicates <= 153/244) / len(perm_replicates)
     print('civial rights act, p-value =', p)    
 
-the_votes_for_the_civil_rights_acts()
-#p = 0.0003. 
-# We permutate democratic votes with republicans vote as if they are the same, 
-# the p value shows that it is only 0.03% chance that we will see percentage of yea votes lower than 62.7%
-# which means that the democratic party is racially biased. 
 
 def a_time_on_website_analog(): 
     # Compute the observed difference in mean inter-no-hitter times: nht_diff_obs
@@ -40,11 +36,7 @@ def a_time_on_website_analog():
     p = np.sum(perm_replicates <= nht_diff_obs) / len(perm_replicates)
     print('no_hitter p-val =', p)    
 
-a_time_on_website_analog()
-#p = 0.0001
-#In empirical observations, the nht_diff_obs is -345
-#If the rule change does not make the average time between no-hitters longer, we have a 0.001% of chance to see average_time smaller than -345
-#which is a very small chance, therefore, the rule change does make the average time between no-hitters longer
+
 
 def hypothesis_test_on_pearson_correlation(): 
     # Compute observed correlation: r_obs
@@ -65,11 +57,7 @@ def hypothesis_test_on_pearson_correlation():
     p = np.sum(perm_replicates >= r_obs) / len(perm_replicates)
     print('pearson correlation, p-val =', p)    
 
-hypothesis_test_on_pearson_correlation()
-# p = 0.0
-# it is extremely unlikely that you see a permutation replicates those pearson correlation value
-# is larger then the observed pearson correlation value. 
-# therefore, we reject the null hypothesis and prove that the correlation from the observation
+
 
 def do_neonicotinoid_insecticides_have_unintended_consequences(): 
     # Compute x,y values for ECDFs
@@ -91,7 +79,6 @@ def do_neonicotinoid_insecticides_have_unintended_consequences():
     plt.ylabel('ECDF')
     plt.show()
 
-do_neonicotinoid_insecticides_have_unintended_consequences()
 
 def bootstrap_hypothesis_test_on_bee_sperm_counts(): 
     # Compute the difference in mean sperm count: diff_means
@@ -118,4 +105,22 @@ def bootstrap_hypothesis_test_on_bee_sperm_counts():
                 / len(bs_replicates)
     print('bee_sperm_counts, p-value =', p)
 
+# the_votes_for_the_civil_rights_acts()
+# p = 0.0003. 
+# We permutate democratic votes with republicans vote as if they are the same, 
+# the p value shows that it is only 0.03% chance that we will see percentage of yea votes lower than 62.7%
+# which means that the democratic party is racially biased. 
 
+# a_time_on_website_analog()
+# p = 0.0001
+# In empirical observations, the nht_diff_obs is -345
+# If the rule change does not make the average time between no-hitters longer, we have a 0.001% of chance to see average_time smaller than -345
+# which is a very small chance, therefore, the rule change does make the average time between no-hitters longer
+
+hypothesis_test_on_pearson_correlation()
+# p = 0.0
+# it is extremely unlikely that you see a permutation replicates those pearson correlation value
+# is larger then the observed pearson correlation value. 
+# therefore, we reject the null hypothesis and prove that the correlation from the observation
+
+do_neonicotinoid_insecticides_have_unintended_consequences()

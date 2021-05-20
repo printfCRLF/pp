@@ -51,6 +51,7 @@ def will_the_bank_fail():
     plt.show()
 
     n_lose_money = np.sum(n_defaults >= 10)
+    print('Number of 100-loan simulations with 10 or more defaults', n_lose_money)
     print('Probability of losing money =', n_lose_money / len(n_defaults))
 
 def sampling_out_of_binomial_distribution(): 
@@ -68,7 +69,7 @@ def plotting_the_binomial_pmf():
     _ = plt.hist(n_defaults, density=True, bins=bins)
 
     _ = plt.xlabel('number of defaults out of 100 loans')
-    _ = plt.ylabel('PMF')
+    _ = plt.ylabel('probability')
     plt.show()
 
 def relationship_between_binomial_and_poisson_distribution(): 
@@ -105,11 +106,12 @@ def was_2015_anomalous():
     p_large = n_large / 10000
     print('Probability of seven or more no-hitters:', p_large)
 
+
 #generating_random_numbers_using_np_random()
 #how_many_defaults()
 #will_the_bank_fail()
 #sampling_out_of_binomial_distribution()
-#plotting_the_binomial_pmf()
+plotting_the_binomial_pmf()
 #relationship_between_binomial_and_poisson_distribution()
-relationship_between_binomial_and_poisson_distribution2()
+#relationship_between_binomial_and_poisson_distribution2()
 #was_2015_anomalous()

@@ -12,7 +12,7 @@ def how_often_do_we_get_no_hitters():
     inter_nohitter_time = np.random.exponential(tau, 100000)
 
     _ = plt.hist(inter_nohitter_time,
-                bins=50, normed=True, histtype='step')
+                bins=50, density=True, histtype='step')
     _ = plt.xlabel('Games between no-hitters')
     _ = plt.ylabel('PDF')
     plt.show()

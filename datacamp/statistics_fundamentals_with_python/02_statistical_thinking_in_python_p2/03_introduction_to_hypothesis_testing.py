@@ -6,6 +6,7 @@ import seaborn as sns
 from util import ecdf, permutation_sample, draw_perm_reps, draw_bs_reps
 from data import rain_june, rain_november, force_a, force_b, forces_concat, empirical_diff_means
 
+sns.set()
 
 def visualizing_permutation_sampling(): 
     for i in range(50):
@@ -94,4 +95,6 @@ def a_two_sample_bootstrap_hypothesis_test_for_difference_of_means():
 
 
 #visualizing_permutation_sampling()
-permutation_test_on_frog_data()
+#permutation_test_on_frog_data()
+#a_one_sample_bootstrap_hypothesis_test()
+a_two_sample_bootstrap_hypothesis_test_for_difference_of_means()

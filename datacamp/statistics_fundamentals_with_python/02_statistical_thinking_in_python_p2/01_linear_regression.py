@@ -6,6 +6,8 @@ import seaborn as sns
 from util import ecdf, pearson_r
 from data import illiteracy, fertility
 
+sns.set()
+
 def eda_of_literacy_fertility_data(): 
     _ = plt.plot(illiteracy, fertility, marker='.', linestyle='none')
     plt.margins(0.02)
@@ -74,9 +76,9 @@ def linear_regression_on_all_anscombe_data():
         a, b = np.polyfit(x, y, 1)
         print('slope:', a, 'intercept:', b)
 
-#eda_of_literacy_fertility_data()
+eda_of_literacy_fertility_data()
 #linear_regression()
-how_is_it_optimal()
+#how_is_it_optimal()
 #linear_regression_on_appropriate_anscombe_data()
 #linear_regression_on_all_anscombe_data()
 

@@ -1,7 +1,10 @@
 import numpy as np 
 import pandas as pd
 import matplotlib.pyplot as plt 
-import seaborn as sns 
+import seaborn as sns
+from sklearn import datasets
+from sklearn.decomposition import PCA
+
 
 versicolor_petal_length = [
     4.7, 4.5, 4.9, 4. , 4.6, 4.5, 4.7, 3.3, 4.6, 3.9, 3.5, 4.2, 4. ,
@@ -19,6 +22,11 @@ virginica_petal_length = [6. , 5.1, 5.9, 5.6, 5.8, 6.6, 4.5, 6.3, 5.8, 6.1, 5.1,
        4.8, 4.9, 5.6, 5.8, 6.1, 6.4, 5.6, 5.1, 5.6, 6.1, 5.6, 5.5, 4.8,
        5.4, 5.6, 5.1, 5.1, 5.9, 5.7, 5.2, 5. , 5.2, 5.4, 5.1]
 
+iris = datasets.load_iris()
+df = pd.DataFrame(data= np.c_[iris['data'], iris['target']],
+                    columns= iris['feature_names'] + ['species'])
+print(df.info())
+
 def plotting__a_histogram_of_iris_data(): 
     n_data = len(versicolor_petal_length)
     n_bins = np.sqrt(n_data)
@@ -32,7 +40,6 @@ def plotting__a_histogram_of_iris_data():
     plt.show()
 
 def bee_swarm_plot(): 
-    df = pd.DataFrame()
     sns.swarmplot(x='species', y='petal length (cm)', data=df )
 
     _ = plt.xlabel('species')
@@ -79,5 +86,5 @@ def comparison_of_ecdfs():
 
 #plotting__a_histogram_of_iris_data()
 #bee_swarm_plot()
-plotting_ecdf()
-#comparison_of_ecdfs()
+#plotting_ecdf()
+comparison_of_ecdfs()
