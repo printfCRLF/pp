@@ -84,4 +84,3 @@ def variation_in_two_parts():
 
 variation_around_the_trend()
 variation_in_two_parts()
-

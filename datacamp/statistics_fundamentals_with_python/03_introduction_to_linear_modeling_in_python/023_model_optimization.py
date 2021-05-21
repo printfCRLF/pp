@@ -6,6 +6,9 @@ from statsmodels.formula.api import ols
 import matplotlib.ticker as ticker
 
 
+x_data, y_data = util.load_data()
+
+
 def model(x, a0=150, a1=25):
     """
     Purpose: 
@@ -20,9 +23,6 @@ def model(x, a0=150, a1=25):
     """
     y = a0 + (a1 * x)
     return y
-
-
-x_data, y_data = util.load_data()
 
 
 def residual_sum_of_the_square():
@@ -47,8 +47,6 @@ def compute_rss_and_plot_fit(a0, a1):
 def minimizing_the_residuals():
     rss, summary = compute_rss_and_plot_fit(a0=150, a1=25)
     print(summary)
-
-
 
 
 def visualizing_the_rss_minima():
@@ -95,7 +93,8 @@ def plot_rss_vs_a1(a1_array, rss_array):
     axis.set_xlabel("Slope $a_1$")
     axis.set_ylim([0, 100000])
     axis.set_title(
-        "Minimum RSS = {:.02f} \n came from $a_1$={}".format(min_rss, best_slope[0])
+        "Minimum RSS = {:.02f} \n came from $a_1$={}".format(
+            min_rss, best_slope[0])
     )
     plt.show()
     return fig

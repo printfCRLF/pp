@@ -37,13 +37,15 @@ def linear_model_in_oceanography():
     future_year = 2100
     future_level = model.predict([[future_year]])
     print(
-        "Prediction: year = {}, level = {:.02f}".format(future_year, future_level[0, 0])
+        "Prediction: year = {}, level = {:.02f}".format(
+            future_year, future_level[0, 0])
     )
 
     # Use model to predict for many years, and over-plot with measured data
     years_forecast = np.linspace(1970, 2100, 131).reshape(-1, 1)
     levels_forecast = model.predict(years_forecast)
-    fig = plot_data_and_forecast(years, levels, years_forecast, levels_forecast)
+    fig = plot_data_and_forecast(
+        years, levels, years_forecast, levels_forecast)
 
 
 def plot_data_and_forecast(years, levels, years_forecast, levels_forecast):
@@ -61,7 +63,8 @@ def plot_data_and_forecast(years, levels, years_forecast, levels_forecast):
     font_options = {"family": "Arial", "size": 16}
     plt.rc("font", **font_options)
     fig, axis = plt.subplots(figsize=(8, 4))
-    axis.plot(years, levels, color="black", linestyle=" ", marker="o", label="Data")
+    axis.plot(years, levels, color="black",
+              linestyle=" ", marker="o", label="Data")
     axis.plot(
         years_forecast, levels_forecast, marker=".", color="red", label="Forecast"
     )
@@ -82,7 +85,7 @@ def plot_data_and_forecast(years, levels, years_forecast, levels_forecast):
     return fig
 
 
-def linear_model_in_cosmology(): 
+def linear_model_in_cosmology():
     df = pd.read_csv("./data/hubble_data.csv", skiprows=8)
 
     # Fit the model, based on the form of the formula
@@ -95,9 +98,12 @@ def linear_model_in_cosmology():
     e1 = model_fit.bse['distances']
 
     # Print the results
-    print('For slope a1={:.02f}, the uncertainty in a1 is {:.02f}'.format(a1, e1))
-    print('For intercept a0={:.02f}, the uncertainty in a0 is {:.02f}'.format(a0, e0))
+    print(
+        'For slope a1={:.02f}, the uncertainty in a1 is {:.02f}'.format(a1, e1))
+    print(
+        'For intercept a0={:.02f}, the uncertainty in a0 is {:.02f}'.format(a0, e0))
 
-#linear_model_in_anthroplogy()
-#linear_model_in_oceanography()
+
+# linear_model_in_anthroplogy()
+# linear_model_in_oceanography()
 linear_model_in_cosmology()

@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import seaborn as sns
 
 
 population = np.array(
@@ -121,7 +122,7 @@ def visualization_variation_of_a_statistic():
     fig = plot_hist(data=stdevs, bins=std_bins,
                     data_name="Stdevs", color='red')
 
-
+sns.set()
 # sample_statistics_versus_population()
 # variation_in_sample_statistics()
 visualization_variation_of_a_statistic()
