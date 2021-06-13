@@ -131,3 +131,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+datacamp/ml_fundamentals_with_python/4_case_study_school_budgeting/data/TrainingData.csv
+datacamp/ml_fundamentals_with_python/4_case_study_school_budgeting/data/TestData.csv
+datacamp/ml_fundamentals_with_python/4_case_study_school_budgeting/data/SubmissionFormat.csv
