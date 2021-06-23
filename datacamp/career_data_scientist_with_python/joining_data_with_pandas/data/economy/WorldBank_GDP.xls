@@ -1,4 +1,4 @@
-Country Name,Country Code,Indicator Name,Year,GDP
+country name,country code,indicator name,year,gdp
 China,CHN,GDP (current US$),2010,6087160000000.0
 Germany,DEU,GDP (current US$),2010,3417090000000.0
 Japan,JPN,GDP (current US$),2010,5700100000000.0
