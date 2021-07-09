@@ -15,3 +15,7 @@ def load_automobile_data():
 
 def load_indian_liver_patient_preprocessed_data():
     return pd.read_csv("data/indian_liver_patient/indian_liver_patient_preprocessed.csv")
+
+
+def load_bike_sharing_data():
+    return pd.read_csv("data/bikes.csv")
