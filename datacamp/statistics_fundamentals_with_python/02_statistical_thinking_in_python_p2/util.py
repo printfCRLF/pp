@@ -1,6 +1,7 @@
-import numpy as np 
+import numpy as np
 
-def ecdf(data): 
+
+def ecdf(data):
     n = len(data)
     x = np.sort(data)
     y = np.arange(1, len(x) + 1) / n
@@ -13,21 +14,21 @@ def pearson_r(x, y):
     corr_mat = np.corrcoef(x, y)
 
     # Return entry [0,1]
-    return corr_mat[0,1]
+    return corr_mat[0, 1]
 
 
-def bootstrap_replicate_1d(data, func): 
+def bootstrap_replicate_1d(data, func):
     """Generate bootstrap replicate of 1D data."""
     bs_sample = np.random.choice(data, len(data))
     return func(bs_sample)
 
 
-def draw_bs_reps(data, func, size=1): 
+def draw_bs_reps(data, func, size=1):
     """Draw bootstrap replicates."""
     bs_replicates = np.empty(size)
-    for i in range(size): 
+    for i in range(size):
         bs_replicates[i] = bootstrap_replicate_1d(data, func)
-    
+
     return bs_replicates
 
 
@@ -45,7 +46,7 @@ def draw_bs_pairs_linreg(x, y, size=1):
     return bs_slope_reps, bs_intercept_reps
 
 
-def permutation_sample(data1, data2): 
+def permutation_sample(data1, data2):
     """Generate a permutation sample from two data sets."""
     data = np.concatenate((data1, data2))
     permuted_data = np.random.permutation(data)
@@ -65,9 +66,8 @@ def draw_perm_reps(data_1, data_2, func, size=1):
 
     return perm_replicates
 
+
 def diff_of_means(data_1, data_2):
     """Difference in means of two arrays."""
     diff = np.mean(data_1) - np.mean(data_2)
     return diff
-    
-
