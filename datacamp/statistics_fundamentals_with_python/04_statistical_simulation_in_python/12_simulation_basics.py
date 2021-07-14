@@ -43,5 +43,5 @@ def simulating_the_dice_game():
 
 
 throwing_a_fair_die()
-throwing_two_fair_dice()
-simulating_the_dice_game()
+# throwing_two_fair_dice()
+# simulating_the_dice_game()

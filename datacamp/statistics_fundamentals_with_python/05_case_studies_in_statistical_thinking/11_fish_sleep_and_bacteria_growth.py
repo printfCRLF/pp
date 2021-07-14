@@ -66,6 +66,14 @@ def permutation_test_wild_type_vs_heterozygote(bout_lengths_het, bout_lengths_wt
     # Compute the p-value: p-val
     p_val = np.sum(perm_reps >= diff_means_exp) / len(perm_reps)
 
+    fig, ax = plt.subplots()
+    _ = ax.hist(perm_reps, bins="sqrt", density=True)
+    _ = ax.set_xlabel("bout length")
+    _ = ax.set_ylabel("Probability")
+    _ = ax.axvline(diff_means_exp, color="red")
+
+    plt.show()
+
     # Print the result
     print('p =', p_val)
 
@@ -91,6 +99,13 @@ def bootstrap_hypothesis_test(bout_lengths_het, bout_lengths_wt):
     # Get replicates of difference of means: bs_replicates
     bs_reps = bs_reps_het - bs_reps_wt
 
+    fig, ax = plt.subplots()
+    _ = ax.hist(bs_reps, bins="sqrt", density=True)
+    _ = ax.set_xlabel("bout length")
+    _ = ax.set_ylabel("Probability")
+    _ = ax.axvline(diff_means_exp, color="red")
+    plt.show()
+
     # Compute and print p-value: p
     p = np.sum(bs_reps >= diff_means_exp) / len(bs_reps)
     print('p-value =', p)
@@ -102,3 +117,8 @@ bout_lengths_wt, bout_lengths_mut, bout_lengths_het = load_data()
 # parameter_estimation_active_bout_length(bout_lengths_wt, bout_lengths_mut)
 # permutation_test_wild_type_vs_heterozygote(bout_lengths_het, bout_lengths_wt)
 bootstrap_hypothesis_test(bout_lengths_het, bout_lengths_wt)
+
+# The permutation test has a pretty restrictive hypothesis, that the heterozygotic and wild type
+# bout lengths are identically distributed.
+# A bootstrap hypothesis test tests the hypothesis that the means are equal,
+# making no assummptions about the distribution.

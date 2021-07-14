@@ -48,6 +48,26 @@ def estimation_of_mean_improvement(swimtime_low_lanes, swimtime_high_lanes):
     95% conf int of mean frac. diff.: [{1:.5f}, {2:.5f}]""".format(f_mean, *conf_int))
 
 
+def how_should_we_test_the_hypothesis(swimtime_low_lanes, swimtime_high_lanes):
+    # Compute the fractional improvement of being in high lane: f
+    f = (swimtime_low_lanes - swimtime_high_lanes) / swimtime_low_lanes
+    # Make x and y values for ECDF: x, y
+    x, y = dcst.ecdf(f)
+    # Plot the ECDFs as dots
+    _ = plt.plot(x, y, marker='.', linestyle='none')
+    _ = plt.xlabel('f')
+    _ = plt.ylabel('ECDF')
+
+    f_shifted = f - np.mean(f)
+    x, y = dcst.ecdf(f_shifted)
+    # Plot the ECDFs as dots
+    _ = plt.plot(x, y, marker='.', linestyle='none', color="red")
+    _ = plt.xlabel('f')
+    _ = plt.ylabel('ECDF')
+
+    plt.show()
+
+
 def hypothesis_test(swimtime_low_lanes, swimtime_high_lanes):
     f = (swimtime_low_lanes - swimtime_high_lanes) / swimtime_low_lanes
     f_mean = np.mean(f)
@@ -76,7 +96,7 @@ def did_the_2015_event_have_this_problem():
     _ = plt.xlabel('f')
     _ = plt.ylabel('ECDF')
     plt.show()
-    
+
     f_mean = np.mean(f)
 
     # Draw 10,000 bootstrap replicates
@@ -102,9 +122,10 @@ def did_the_2015_event_have_this_problem():
 
 
 sns.set()
-#swimtime_low_lanes, swimtime_high_lanes = load_data()
-#ecdf_of_improvement_from_low_to_high_lanes(
+swimtime_low_lanes, swimtime_high_lanes = load_data()
+# ecdf_of_improvement_from_low_to_high_lanes(
 #    swimtime_low_lanes, swimtime_high_lanes)
 #estimation_of_mean_improvement(swimtime_low_lanes, swimtime_high_lanes)
+how_should_we_test_the_hypothesis(swimtime_low_lanes, swimtime_high_lanes)
 #hypothesis_test(swimtime_low_lanes, swimtime_high_lanes)
-did_the_2015_event_have_this_problem()
+# did_the_2015_event_have_this_problem()

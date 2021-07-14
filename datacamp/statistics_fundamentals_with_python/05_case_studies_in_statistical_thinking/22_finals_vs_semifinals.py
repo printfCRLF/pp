@@ -116,3 +116,9 @@ final_times, semi_times = load_data()
 eda_final_vs_semifinals(semi_times, final_times)
 parameter_estimates(semi_times, final_times)
 do_women_swim_in_the_same_way(semi_times, final_times)
+# null hypothesis, swimmer swim the same speed at semi-finals and finals
+# p = 0.26. There is 25% chance to obtain the observed fractional improvement 
+# when the experiment is conducted many times under condition that the null hypothesis is true. 
+
+# It is very likely to see the fractional improvement time when the semi-finals and finals are the same. 
+# Therefore, swimmers do not swim faster in the finals compared to the semi-finals. 
