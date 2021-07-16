@@ -19,3 +19,6 @@ def load_school_data():
 
 def load_diabetes_data():
     return pd.read_csv("data/PimaIndians.csv")
+
+def load_sales_data(): 
+    return pd.read_csv("data/grocery_sales.csv")
