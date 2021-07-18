@@ -63,5 +63,5 @@ def hold_out_set_regression(X, y):
 df = pd.read_csv('data/diabetes.csv')
 X = df.drop(columns=['diabetes'])
 y = df['diabetes']
-#holdout_set_classification(X, y)
+holdout_set_classification(X, y)
 hold_out_set_regression(X, y)

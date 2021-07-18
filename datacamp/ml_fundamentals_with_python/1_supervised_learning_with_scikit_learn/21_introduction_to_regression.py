@@ -48,7 +48,7 @@ def fit_predict_between_fertility_life(X_fertility, y):
     y_pred = reg.predict(prediction_space)
 
     # Print R^2
-    print(reg.score(X_fertility, y))
+    print("R^2 for one feature: ", reg.score(X_fertility, y))
 
     # Plot regression line
     plt.plot(prediction_space, y_pred, color='black', linewidth=3)
@@ -74,12 +74,12 @@ def regression_for_all_features():
     y_pred = reg_all.predict(X_test)
 
     # Compute and print R^2 and RMSE
-    print("R^2: {}".format(reg_all.score(X_test, y_test)))
+    print("R^2 for all features: {}".format(reg_all.score(X_test, y_test)))
     rmse = np.sqrt(mean_squared_error(y_pred, y_test))
     print("Root Mean Squared Error: {}".format(rmse))
 
 
 sns.set()
-# X_fertility, y = importing_data_for_supervised_learning()
-# fit_predict_between_fertility_life(X_fertility, y)
+X_fertility, y = importing_data_for_supervised_learning()
+fit_predict_between_fertility_life(X_fertility, y)
 regression_for_all_features()

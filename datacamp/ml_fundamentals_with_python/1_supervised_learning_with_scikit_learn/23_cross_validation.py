@@ -36,4 +36,4 @@ def k_fold_cv_comparison(X, y):
 
 X, y = data.load_gm_data()
 five_fold_cross_validation(X, y)
-k_fold_cv_comparison(X, y)
+# k_fold_cv_comparison(X, y)

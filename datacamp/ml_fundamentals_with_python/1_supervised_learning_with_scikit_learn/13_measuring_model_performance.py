@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
-
+import seaborn as sns
 from sklearn import datasets
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.model_selection import train_test_split
@@ -75,6 +75,7 @@ def overfitting_and_underfitting(X_train, X_test, y_train, y_test):
     plt.show()
 
 
+sns.set()
 the_digits_recognition_dataset()
 X_train, X_test, y_train, y_test = train_test_split_predict()
 overfitting_and_underfitting(X_train, X_test, y_train, y_test)
