@@ -221,13 +221,14 @@ def load_lcd_digits():
 def load_musical_artists():
     df = pd.read_csv(
         'data/Musical artists/scrobbler-small-sample.csv')
-    row = df['user_offset'].values
-    col = df['artist_offset'].values
+    row = df['artist_offset'].values
+    col = df['user_offset'].values
     data = df['playcount'].values
-    ## todo: to load data properly
+    # todo: to load data properly
     artists = csr_matrix((data, (row, col)), shape=(111, 500))
 
-    file = open('data/Musical artists/artists.csv', "r")
-    artist_names = file.readlines()
+    filename = 'data/Musical artists/artists.csv'
+    with open(filename) as f:
+        artist_names = f.read().splitlines()
 
     return artists, artist_names

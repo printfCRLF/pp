@@ -41,7 +41,7 @@ def clustering_stock_data(movements, companies):
     print(df.sort_values('labels'))
 
 
-# samples, species = data.load_fish_data()
-# pipeline = scaling_fishing_data()
-# clustering_fish_data(samples, species, pipeline)
+samples, species = data.load_fish_data()
+pipeline = scaling_fishing_data()
+clustering_fish_data(samples, species, pipeline)
 clustering_stock_data(*data.load_stock_movements_data())

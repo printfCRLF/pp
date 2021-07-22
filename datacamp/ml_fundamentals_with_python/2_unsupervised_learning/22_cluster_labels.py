@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 from scipy.cluster.hierarchy import linkage, dendrogram
 from scipy.cluster.hierarchy import fcluster
-import data
+from data import load_seed_data, load_eurovision_data
 
 
 def single_linkage(samples, country_names):
@@ -33,5 +33,8 @@ def extracting_cluster_labels(samples, varieties):
     print(ct)
 
 
-single_linkage(*data.load_eurovision_data())
-extracting_cluster_labels(*data.load_seed_data())
+samples, country_names = load_eurovision_data()
+single_linkage(samples, country_names)
+
+samples, varieties, _ = load_seed_data()
+extracting_cluster_labels(samples, varieties)

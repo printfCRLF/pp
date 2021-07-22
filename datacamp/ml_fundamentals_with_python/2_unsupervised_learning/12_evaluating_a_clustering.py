@@ -6,12 +6,9 @@ from sklearn.cluster import KMeans
 def load_grains_data():
     df = pd.read_csv('data/Grains/seeds.csv')
     samples = df.iloc[:, :-1]
-    varieties = df.iloc[:, -1].values
-    i1 = len(varieties[varieties == 1])
-    i2 = len(varieties[varieties == 2])
-    i3 = len(varieties[varieties == 3])
-    new_varieties = ['Kama wheat'] * i1 + ['Rosa wheat'] * i2 + ['Canadian wheat'] * i3
-    return samples, new_varieties
+    mapping = {1: 'Kama wheat', 2: "Rosa wheat", 3: "Canadian wheat"}
+    varieties = df.iloc[:, -1].replace(mapping)
+    return samples, varieties.values
 
 
 def how_many_clusters_of_grain(samples):
@@ -48,5 +45,5 @@ def evaluating_grain_clustering(samples, varieties):
 
 
 samples, varieties = load_grains_data()
-#how_many_clusters_of_grain(samples)
+how_many_clusters_of_grain(samples)
 evaluating_grain_clustering(samples, varieties)

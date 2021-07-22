@@ -3,9 +3,7 @@ import numpy as np
 import pandas as pd
 from scipy.cluster.hierarchy import linkage, dendrogram
 from sklearn.preprocessing import normalize
-import data
-
-
+from data import load_seed_data, load_stock_movements_data
 
 
 def hierarchical_clustering(samples, varieties):
@@ -33,5 +31,8 @@ def hierarchies_of_stocks(movements, companies):
     plt.show()
 
 
-hierarchical_clustering(*data.load_seed_data())
-hierarchies_of_stocks(*data.load_stock_movements_data())
+# samples, varieties, _ = load_seed_data()
+# hierarchical_clustering(samples, varieties)
+
+movements, companies = load_stock_movements_data()
+hierarchies_of_stocks(movements, companies)

@@ -609,7 +609,7 @@ new_points = np.array([[4.00233332e-01, -1.26544471e+00],
 def clustering_2d_points(points, new_points):
     # Create a KMeans instance with 3 clusters: model
     model = KMeans(n_clusters=3)
-    
+
     # Fit model to points
     model.fit(points)
 

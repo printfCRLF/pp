@@ -46,7 +46,7 @@ def nmf_learns_part_of_images(samples):
     print(digit_features)
 
 
-def pca_does_not_learn_parts(samples): 
+def pca_does_not_learn_parts(samples):
     # Create a PCA instance: model
     model = PCA(n_components=7)
     # Apply fit_transform to samples: features
@@ -54,10 +54,9 @@ def pca_does_not_learn_parts(samples):
     # Call show_as_image on each component
     for component in model.components_:
         show_as_image(component)
-            
 
 
 digits = data.load_lcd_digits()
-# explore_led_digits_dataset(digits)
-# nmf_learns_part_of_images(digits)
-pca_does_not_learn_parts(digits)
+explore_led_digits_dataset(digits)
+nmf_learns_part_of_images(digits)
+# pca_does_not_learn_parts(digits)

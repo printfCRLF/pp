@@ -11,7 +11,6 @@ def nmf_learns_topics_of_documents(articles, words):
     nmf_features = model.transform(articles)
     # Print the NMF features
     print(nmf_features.round(2))
-    return nmf_features
 
     # Create a DataFrame: components_df
     components_df = pd.DataFrame(model.components_, columns=words)

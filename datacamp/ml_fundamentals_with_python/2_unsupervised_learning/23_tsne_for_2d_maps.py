@@ -26,7 +26,7 @@ def tsne_visualization_of_grain_dataset(samples, variety_numbers):
     plt.show()
 
 
-def tsne_of_stock_market(movements, companies): 
+def tsne_of_stock_market(movements, companies):
     normalized_movements = Normalizer().fit_transform(movements)
 
     # Create a TSNE instance: model
@@ -36,10 +36,10 @@ def tsne_of_stock_market(movements, companies):
     tsne_features = model.fit_transform(normalized_movements)
 
     # Select the 0th feature: xs
-    xs = tsne_features[:,0]
+    xs = tsne_features[:, 0]
 
     # Select the 1th feature: ys
-    ys = tsne_features[:,1]
+    ys = tsne_features[:, 1]
 
     # Scatter plot
     plt.scatter(xs, ys, alpha=0.5)
@@ -47,10 +47,11 @@ def tsne_of_stock_market(movements, companies):
     # Annotate the points
     for x, y, company in zip(xs, ys, companies):
         plt.annotate(company, (x, y), fontsize=5, alpha=0.75)
-    plt.show()    
+    plt.show()
 
 
-# samples, variety_numbers = data.load_grain_data_from_file()
-# tsne_visualization_of_grain_dataset(samples, variety_numbers)
+samples, variety_numbers = data.load_grain_data_from_file()
+tsne_visualization_of_grain_dataset(samples, variety_numbers)
+
 movements, companies = data.load_stock_movements_data()
 tsne_of_stock_market(movements, companies)

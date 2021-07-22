@@ -15,7 +15,7 @@ def nmf_applied_to_wikipedia_articles(articles):
     return nmf_features
 
 
-def nmf_features(nmf_features):
+def print_nmf_features(nmf_features):
     # Create a pandas DataFrame: df
     df = pd.DataFrame(nmf_features, index=titles)
     # Print the row for 'Anne Hathaway'
@@ -26,4 +26,4 @@ def nmf_features(nmf_features):
 
 articles, titles = data.load_wikipedia_articles_and_titles()
 nmf_features = nmf_applied_to_wikipedia_articles(articles)
-nmf_features(nmf_features)
+print_nmf_features(nmf_features)

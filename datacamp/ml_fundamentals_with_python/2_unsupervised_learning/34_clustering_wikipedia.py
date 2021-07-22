@@ -4,7 +4,8 @@ from sklearn.pipeline import make_pipeline
 import pandas as pd
 import data
 
-articles, titles = data.load_wikipedia()
+# https://www.lateral.io/resources-blog/the-unknown-perils-of-mining-wikipedia
+articles, titles = data.load_wikipedia_articles_and_titles()
 
 # Create a TruncatedSVD instance: svd
 svd = TruncatedSVD(n_components=50)
