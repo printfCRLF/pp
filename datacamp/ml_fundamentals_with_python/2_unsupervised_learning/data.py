@@ -224,7 +224,6 @@ def load_musical_artists():
     row = df['artist_offset'].values
     col = df['user_offset'].values
     data = df['playcount'].values
-    # todo: to load data properly
     artists = csr_matrix((data, (row, col)), shape=(111, 500))
 
     filename = 'data/Musical artists/artists.csv'
