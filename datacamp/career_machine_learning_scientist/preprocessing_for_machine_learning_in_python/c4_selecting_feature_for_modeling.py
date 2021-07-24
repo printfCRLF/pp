@@ -2,7 +2,9 @@ import pandas as pd
 from data import load_volunteer_data, load_wine_data
 from sklearn.naive_bayes import GaussianNB
 from sklearn.model_selection import train_test_split
-from c3_feature_engineering import engineering_features_from_strings_tfidf
+from sklearn.decomposition import PCA
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.feature_extraction.text import TfidfVectorizer
 
 
 def selecting_relevant_features(volunteer):
@@ -49,13 +51,26 @@ def words_to_filter(vocab, original_vocab, vector, top_n):
     return set(filter_list)
 
 
-def exploring_text_vectors():
-    y = volunteer["category_desc"]
-    tfidf_vec, text_tfidf = engineering_features_from_strings_tfidf()
-    # Print out the weighted words
-    print(return_weights(vocab, tfidf_vec.vocabulary_, text_tfidf, 8, 3))
+def exploring_text_vectors(volunteer):
+    volunteer = volunteer[volunteer["title"].notnull(
+    ) & volunteer["category_desc"].notnull()]
+    # Take the title text
+    title_text = volunteer["title"]
+    # Create the vectorizer method
+    tfidf_vec = TfidfVectorizer()
+    # Transform the text into tf-idf vectors
+    text_tfidf = tfidf_vec.fit_transform(title_text)
+
+    vocab = {v: k for k, v in tfidf_vec.vocabulary_.items()}
+    # Call the function to get the list of word indices
+    filtered_words = words_to_filter(
+        vocab, tfidf_vec.vocabulary_, text_tfidf, 3)
+
+    # By converting filtered_words back to a list, we can use it to filter the columns in the text vector
+    filtered_text = text_tfidf[:, list(filtered_words)]
 
     # Split the dataset according to the class distribution of category_desc, using the filtered_text vector
+    y = volunteer["category_desc"]
     train_X, test_X, train_y, test_y = train_test_split(
         filtered_text.toarray(), y, stratify=y)
 
@@ -67,7 +82,36 @@ def exploring_text_vectors():
     print(nb.score(test_X, test_y))
 
 
+def using_pca(wine):
+    # Set up PCA and the X vector for diminsionality reduction
+    pca = PCA()
+    wine_X = wine.drop("Type", axis=1)
+    y = wine["Type"]
+
+    # Apply PCA to the wine dataset X vector
+    transformed_X = pca.fit_transform(wine_X)
+
+    # Look at the percentage of variance explained by the different components
+    print(pca.explained_variance_ratio_)
+
+    # Split the transformed X and the y labels into training and test sets
+    X_wine_train, X_wine_test, y_wine_train, y_wine_test = train_test_split(
+        transformed_X, y)
+
+    knn = KNeighborsClassifier(n_neighbors=5)
+    # Fit knn to the training data
+    knn.fit(X_wine_train, y_wine_train)
+
+    # Score knn on the test data and print it out
+    score = knn.score(X_wine_test, y_wine_test)
+    print(score)
+
+
 volunteer = load_volunteer_data()
-selecting_relevant_features(volunteer)
 wine = load_wine_data()
-checking_for_correlated_features(wine)
+
+# selecting_relevant_features(volunteer)
+# exploring_text_vectors(volunteer)
+
+# checking_for_correlated_features(wine)
+using_pca(wine)

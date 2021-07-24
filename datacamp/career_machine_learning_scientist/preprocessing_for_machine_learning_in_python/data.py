@@ -15,3 +15,5 @@ def load_ufo_data():
 
 def load_hiking_data():
     return pd.read_json("data/hiking.json")
+
+
