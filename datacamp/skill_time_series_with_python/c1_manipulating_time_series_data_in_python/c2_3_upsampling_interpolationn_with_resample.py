@@ -40,6 +40,7 @@ def interpolate_deb_gdp_and_compare_to_unemployment():
     plt.show()
 
 
-sns.set()
-# use_interpolation_to_create_weekly_employment_data()
-interpolate_deb_gdp_and_compare_to_unemployment()
+if __name__ == "__main__":
+    sns.set()
+    use_interpolation_to_create_weekly_employment_data()
+    # interpolate_deb_gdp_and_compare_to_unemployment()

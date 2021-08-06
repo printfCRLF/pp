@@ -33,7 +33,6 @@ def cumulative_return_of_1000_invested_in_google_vs_apple1():
 
     # Calculate the daily returns here
     returns = data.pct_change()
-
     # Calculate the cumulative returns here
     returns_plus_one = returns + 1
     cumulative_return = returns_plus_one.cumprod()
@@ -46,7 +45,7 @@ def cumulative_return_of_1000_invested_in_google_vs_apple1():
 def cumulative_return_of_1000_invested_in_google_vs_apple2():
     data = pd.read_csv("data/stock_data/apple_google.csv",
                        parse_dates=["Date"], index_col="Date")
-    
+
     # Calculate daily returns
     daily_returns = data.pct_change()
 

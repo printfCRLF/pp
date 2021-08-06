@@ -39,7 +39,7 @@ def comparing_stock_prices_with_a_benchmark():
 
 def plot_performance_difference_vs_index():
     # Create tickers
-    tickers = ["MSFT", "AAPL"]
+    tickers = ["AAPL", "MSFT"]
 
     # Import stock data here
     stocks = pd.read_csv("data/stock_data/msft_aapl.csv", parse_dates=[
@@ -58,8 +58,13 @@ def plot_performance_difference_vs_index():
     # Subtract the normalized index from the normalized stock prices, and plot the result
     normalized[tickers].sub(normalized["SP500"], axis=0).plot()
     plt.show()
+    relative_pfm = normalized[tickers].sub(normalized["SP500"], axis=0)
+    relative_pfm.columns = ["AAPL_REL", "MSFT_REL"]
+    joined = pd.concat([normalized, relative_pfm], axis=1)
+    print(joined.head())
 
 
-# compare_performances_of_several_asset_classes()
-# comparing_stock_prices_with_a_benchmark()
-plot_performance_difference_vs_index()
+if __name__ == "__main__":
+    # compare_performances_of_several_asset_classes()
+    # comparing_stock_prices_with_a_benchmark()
+    plot_performance_difference_vs_index()

@@ -26,8 +26,7 @@ def explore_and_clean_company_listing_info():
 
 def select_and_inspect_index_component(listings):
     # Select largest company for each sector
-    components = listings.groupby(
-        "Sector")["Market Capitalization"].nlargest(1)
+    components = listings.groupby("Sector")["Market Capitalization"].nlargest(1)
 
     # Print components, sorted by market cap
     print(components.sort_values(ascending=False))
@@ -62,7 +61,8 @@ def import_index_component_price_information():
     plt.show()
 
 
-sns.set()
-listings = explore_and_clean_company_listing_info()
-select_and_inspect_index_component(listings)
-# import_index_component_price_information()
+if __name__ == "__main__":
+    sns.set()
+    listings = explore_and_clean_company_listing_info()
+    select_and_inspect_index_component(listings)
+    import_index_component_price_information()

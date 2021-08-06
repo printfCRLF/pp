@@ -49,12 +49,13 @@ def set_and_change_time_series_frequency(co):
     plt.show()
 
 
-sns.set()
-# air_quality_nyc = load_air_quality_nyc_data()
-# create_time_series(air_quality_nyc)
+if __name__ == "__main__":
+    sns.set()
+    # air_quality_nyc = load_air_quality_nyc_data()
+    # create_time_series(air_quality_nyc)
 
-# yahoo = load_stock_yahoo_data()
-# compare_annual_stock_price_trend(yahoo)
+    # yahoo = load_stock_yahoo_data()
+    # compare_annual_stock_price_trend(yahoo)
 
-co = load_co_cities_data()
-set_and_change_time_series_frequency(co)
+    co = load_co_cities_data()
+    set_and_change_time_series_frequency(co)

@@ -32,6 +32,8 @@ def compare_monthly_average_stock_prices_for_facebook_and_google():
 
 
 def compare_quarterly_gdp_growth_rate_and_stock_returns():
+    # gdp_growth is at quarterly, djia has daily price.
+    # down sample djia to quarterly data and convert the data from price to return.
     gdp_growth = pd.read_csv("data/stock_data/gdp_growth.csv", parse_dates=[
                              "date"], index_col="date")
     print(gdp_growth.info())
@@ -64,12 +66,15 @@ def visualize_monthly_mean_median_and_std_for_sp500():
     stats = daily_returns.resample("M").agg(["mean", "median", "std"])
 
     # Plot stats here
-    stats.plot()
+    fig, axes = plt.subplots(2, 1)
+    sp500.plot(ax=axes[0])
+    stats.plot(ax=axes[1])
     plt.show()
 
 
-sns.set()
-# compare_weekly_monthly_annual_ozone_trends()
-# compare_monthly_average_stock_prices_for_facebook_and_google()
-# compare_quarterly_gdp_growth_rate_and_stock_returns()
-visualize_monthly_mean_median_and_std_for_sp500()
+if __name__ == "__main__":
+    sns.set()
+    # compare_weekly_monthly_annual_ozone_trends()
+    # compare_monthly_average_stock_prices_for_facebook_and_google()
+    # compare_quarterly_gdp_growth_rate_and_stock_returns()
+    visualize_monthly_mean_median_and_std_for_sp500()

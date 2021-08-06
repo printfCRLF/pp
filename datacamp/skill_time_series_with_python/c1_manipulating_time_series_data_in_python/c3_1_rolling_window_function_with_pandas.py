@@ -52,7 +52,8 @@ def rolling_quantiles():
     plt.show()
 
 
-sns.set()
-# rolling_average_air_quanlity()
-# rolling_median_std()
-rolling_quantiles()
+if __name__ == "__main__":
+    sns.set()
+    rolling_average_air_quanlity()
+    # rolling_median_std()
+    # rolling_quantiles()
