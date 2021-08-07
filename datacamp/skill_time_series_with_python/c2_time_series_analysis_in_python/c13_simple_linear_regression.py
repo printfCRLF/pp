@@ -8,21 +8,19 @@ import pandas as pd
 def looking_at_regression_r_squared():
     x = np.random.normal(loc=0.0, scale=1.0, size=1000)
     y = np.random.normal(loc=0.0, scale=1.0, size=1000)
-    # a, b = -0.9, -0.005
-    # y = a * x + b
+    y_residual = np.random.random_sample(size=1000)
+    a, b = -0.9, -0.005
+    y = a * x + b + y_residual
     x = pd.Series(x)
     y = pd.Series(y)
 
     # Compute correlation of x and y
     correlation = x.corr(y)
-    print("The correlation between x and y is %4.2f" % (correlation))
-
+    print("The correlation between x and y is %4.4f" % (correlation))
     # Convert the Series x to a DataFrame and name the column x
     dfx = pd.DataFrame(x, columns=['x'])
-
     # Add a constant to the DataFrame dfx
     dfx1 = sm.add_constant(dfx)
-
     # Regress y on dfx1
     result = sm.OLS(y, dfx1).fit()
 

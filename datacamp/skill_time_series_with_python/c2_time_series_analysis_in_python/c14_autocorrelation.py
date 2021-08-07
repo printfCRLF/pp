@@ -5,20 +5,44 @@ import seaborn as sns
 import pandas as pd
 
 
+def plot_lag_one_autocorrelation():
+    s1 = pd.Series([1, 3, 4.5, 8, 8.2, 10, 9])
+    s2 = pd.Series([5, 3.3, 5.3, 3, 7, 3, 5])
+
+    s1_shifted = s1.shift()
+    s2_shifted = s2.shift()
+
+    fig, axes = plt.subplots(2, 1, sharex=True)
+    axes[0].plot(s1, color="red")
+    axes[0].plot(s1_shifted, color="blue")
+    axes[0].set_title("Positive autocorrelation - trending")
+
+    axes[1].plot(s2, color="red")
+    axes[1].plot(s2_shifted, color="blue")
+    axes[1].set_title(
+        "Negative autocorrelation - mean-reverting")
+
+    plt.show()
+
+
 def popular_strategy_using_autocorrelation():
     MSFT = pd.read_csv("data/financial_data/MSFT.csv",
                        parse_dates=["Date"], index_col="Date")
-    # Convert the daily data to weekly data
-    MSFT = MSFT.resample(rule="W").last()
+    periods = {"weekly": "W", "monthly": "M", "yearly": "A"}
+    fig, axes = plt.subplots(3, 1, sharex=True)
 
-    # Compute the percentage change of prices
-    returns = MSFT.pct_change()
+    for i, (key, value) in enumerate(periods.items()):
+        resampled = MSFT.resample(rule=value).last()
+        returns = resampled.pct_change()
 
-    # Compute and print the autocorrelation of returns
-    autocorrelation = returns["Adj Close"].autocorr()
-    print("The autocorrelation of weekly returns is %4.2f" % (autocorrelation))
+        # Compute and print the autocorrelation of returns
+        autocorrelation = returns["Adj Close"].autocorr()
+        print(f"The autocorrelation of {key} returns is %4.2f" % (
+            autocorrelation))
 
-    MSFT.plot()
+        resampled.plot(
+            ax=axes[i], title=f"MSFT {key}, autocorrelation is %4.2f" % (autocorrelation))
+
     plt.show()
 
 
@@ -52,5 +76,6 @@ def are_interest_rate_auto_correlated():
 
 if __name__ == "__main__":
     sns.set()
-    # popular_strategy_using_autocorrelation()
-    are_interest_rate_auto_correlated()
+    # plot_lag_one_autocorrelation()
+    popular_strategy_using_autocorrelation()
+    # are_interest_rate_auto_correlated()

@@ -27,7 +27,9 @@ def merging_time_series_with_different_dates():
     set_bond_dates = set(bonds.index)
 
     # Take the difference between the sets and print
-    print(set_stock_dates - set_bond_dates)
+    
+    print("Dates in stocks but not in bonds", set_stock_dates - set_bond_dates)
+    print("Dates in bonds but not in stocks", set_bond_dates - set_stock_dates)
 
     # Merge stocks and bonds DataFrames using join()
     stocks_and_bonds = stocks.join(bonds, how="inner")
