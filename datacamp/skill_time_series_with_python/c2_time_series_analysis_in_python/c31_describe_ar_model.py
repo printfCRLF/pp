@@ -1,4 +1,4 @@
-from statsmodels.graphics.tsaplots import plot_acf
+from statsmodels.graphics.tsaplots import plot_acf, plot_pacf
 from statsmodels.tsa.stattools import adfuller
 from statsmodels.tsa.arima_process import ArmaProcess
 import numpy as np
@@ -27,6 +27,20 @@ def simulate_ar1_time_series():
     plt.show()
 
 
+def simulate_ar2_time_series():
+    fig, axes = plt.subplots(3, 1)
+
+    ar = np.array([2, -0.9, -0.8])
+    ma = np.array([1])
+    arma = ArmaProcess(ar, ma)
+    simulated = arma.generate_sample(nsample=1000)
+    axes[0].plot(simulated)
+    axes[0].set_title("AR(2, [0.9, 0.8]), MA(1, 0)")
+    plot_acf(simulated, ax=axes[1])
+    plot_pacf(simulated, ax=axes[2])
+    plt.show()
+
+
 def compare_the_acf_for_several_ar_time_series():
     ar_parameters = [0.9, -0.9, 0.3]
     fig, axes = plt.subplots(3, 1, sharex=True)
@@ -47,4 +61,5 @@ def compare_the_acf_for_several_ar_time_series():
 if __name__ == "__main__":
     sns.set()
     # simulate_ar1_time_series()
-    compare_the_acf_for_several_ar_time_series()
+    simulate_ar2_time_series()
+    # compare_the_acf_for_several_ar_time_series()

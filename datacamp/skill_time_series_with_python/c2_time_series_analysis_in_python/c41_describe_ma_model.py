@@ -1,10 +1,23 @@
 from statsmodels.tsa.arima_process import ArmaProcess
-from statsmodels.tsa.arima_process import ArmaProcess
-from statsmodels.graphics.tsaplots import plot_acf
+from statsmodels.graphics.tsaplots import plot_acf, plot_pacf
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 import pandas as pd
+
+
+def simulate_ma2_time_series():
+    fig, axes = plt.subplots(3, 1)
+
+    ar = np.array([1])
+    ma = np.array([1, -0.9, -0.5])
+    arma = ArmaProcess(ar, ma)
+    simulated = arma.generate_sample(nsample=1000)
+    axes[0].plot(simulated)
+    axes[0].set_title("AR(1, 0), MA(2, [0.9, 0.8])")
+    plot_acf(simulated, ax=axes[1])
+    plot_pacf(simulated, ax=axes[2])
+    plt.show()
 
 
 def simulate_ma1_time_series():
@@ -41,5 +54,6 @@ def compute_acf_for_several_ma_time_series(simulated_data_1, simulated_data_2):
 
 if __name__ == "__main__":
     sns.set()
-    simulated_data_1, simulated_data_2 = simulate_ma1_time_series()
-    compute_acf_for_several_ma_time_series(simulated_data_1, simulated_data_2)
+    simulate_ma2_time_series()
+    # simulated_data_1, simulated_data_2 = simulate_ma1_time_series()
+    # compute_acf_for_several_ma_time_series(simulated_data_1, simulated_data_2)
