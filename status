@@ -1,0 +1,341 @@
+[33mcommit 086d749dfa156f98e45120a3340d0c6e78c01bec[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Author: Bowen <bowen.sui@hotmail.com>
+Date:   Wed Aug 18 19:08:45 2021 +0200
+
+    finish chapter 3
+
+[33mcommit 6b9e602944c61cb7c96bfff595127b7c27115f7c[m
+Author: Bowen <bowen.sui@hotmail.com>
+Date:   Wed Aug 18 17:30:23 2021 +0200
+
+    ignore large files
+
+[33mcommit 7209eea74fb3473db6de70cae63613f3c91945d6[m
+Author: Bowen <bowen.sui@hotmail.com>
+Date:   Wed Aug 18 16:55:16 2021 +0200
+
+    course: machine learning for time series data in python
+
+[33mcommit 66c67d7c3a766bfe2a601a94e1272531b8cbe024[m
+Author: Bowen <bowen.sui@hotmail.com>
+Date:   Sat Aug 14 23:04:48 2021 +0200
+
+    finish course: arima models in python
+
+[33mcommit 62cabb1dbe7ae005360084866c18ee53c8c3a527[m
+Author: Bowen <bowen.sui@hotmail.com>
+Date:   Fri Aug 13 23:36:47 2021 +0200
+
+    corse: arima models in python
+
+[33mcommit 44bb216d6f9a5bc57fe81b4904e9c1d978dc8f94[m
+Author: Bowen <bowen.sui@hotmail.com>
+Date:   Mon Aug 9 22:02:00 2021 +0200
+
+    finish course: visualize_time_series_data_in_python
+
+[33mcommit 9c3191ceb534e682ccf178bdb149ad79e267a95a[m
+Author: Bowen <bowen.sui@hotmail.com>
+Date:   Sat Aug 7 23:26:21 2021 +0200
+
+    finish course: time series analysis in python
+    
+    autocorrelation, ACF, PACF, random walk, white noise, ARMA model
+
+[33mcommit 08bae8538aa3f9af7752eae17cf64cbee62b5677[m
+Author: Bowen <bowen.sui@hotmail.com>
+Date:   Fri Aug 6 02:13:03 2021 +0200
+
+    review course: manipulating time series data in python
+
+[33mcommit b5dac4e648b1f0713f459d62d9fecffe471d487c[m
+Author: Bowen <bowen.sui@hotmail.com>
+Date:   Tue Aug 3 23:20:30 2021 +0200
+
+    finish course: time series with python
+
+[33mcommit 60d505dae266b1477a0d23e7ac497a22799242ab[m
+Author: Bowen <bowen.sui@hotmail.com>
+Date:   Mon Aug 2 21:23:35 2021 +0200
+
+    course: time series in python
+
+[33mcommit eb8dc904d29c6376eba30ef29b358e6751853f2a[m
+Author: Bowen <bowen.sui@hotmail.com>
+Date:   Tue Jul 27 01:54:23 2021 +0200
+
+    finish course: feature engineering
+
+[33mcommit d6c657ff73efb728863fb11e4ac041fcec9ec2c7[m
+Author: Bowen <bowen.sui@hotmail.com>
+Date:   Sat Jul 24 22:21:00 2021 +0200
+
+    finish course: data preprocessing in ml
+
+[33mcommit 1944268198312f2ef2143557004d27fad68b162c[m
+Author: Bowen <bowen.sui@hotmail.com>
+Date:   Thu Jul 22 18:50:12 2021 +0200
+
+    asdf
+
+[33mcommit 0cdcbe00e3a5ae9ae867557b49fda2f8962b1bbb[m
+Author: Bowen <bowen.sui@hotmail.com>
+Date:   Thu Jul 22 18:49:46 2021 +0200
+
+    review course: unsupervised learning
+
+[33mcommit 8ae5a200a297ae35e115db6d1140e33509575d01[m
+Author: Bowen <bowen.sui@hotmail.com>
+Date:   Sun Jul 18 15:42:15 2021 +0200
+
+    review some course
+
+[33mcommit a8f12616014d9618710ab09448846fa13f0e1810[m
+Author: Bowen <bowen.sui@hotmail.com>
+Date:   Sat Jul 17 00:15:55 2021 +0200
+
+    finish course: dimension reduction
+
+[33mcommit 12d5160ab4bdb6677ea878f7db01384cf32d500a[m
+Author: Bowen <bowen.sui@hotmail.com>
+Date:   Fri Jul 16 17:12:18 2021 +0200
+
+    course progress: dimension reduction
+
+[33mcommit 512578ec6cdb12244a8a16517c23442341bca908[m
+Author: Bowen <bowen.sui@hotmail.com>
+Date:   Wed Jul 14 10:56:55 2021 +0200
+
+    finish course: clustering
+
+[33mcommit 2c7fef27972b85561bb7f474ae3ac06ad23bb8da[m
+Author: Bowen <bowen.sui@hotmail.com>
+Date:   Sun Jul 11 15:45:35 2021 +0200
+
+    reviewed course: Statistical Thinking in Python Part 2
+
+[33mcommit 0ed95a2261df5cb3b3c11ab31874ea45050d257e[m
+Author: Bowen <bowen.sui@hotmail.com>
+Date:   Sat Jul 10 16:44:44 2021 +0200
+
+    course reviewed: Statistical Thinking in Python Part 1
+
+[33mcommit 6027d46d21e56ac4ce476521b4e6f9d0300bd069[m
+Author: Bowen <bowen.sui@hotmail.com>
+Date:   Fri Jul 9 21:44:40 2021 +0200
+
+    finish course: tree based algorithms
+
+[33mcommit e3e90fbf8d4a168b0babc8dfe94ff82361879724[m
+Author: Bowen <bowen.sui@hotmail.com>
+Date:   Thu Jul 8 23:27:12 2021 +0200
+
+    course: ML with tree-based models c1, c2
+
+[33mcommit 8c3b761a4646458f7f2a4b1ce9e219c0ef4365ae[m
+Author: Bowen <bowen.sui@hotmail.com>
+Date:   Wed Jul 7 20:52:27 2021 +0200
+
+    finish course: analyzing police activity with pandas
+
+[33mcommit 15c0469fb379c35c802c34ca6cdd08c75abcf5df[m
+Author: Bowen <bowen.sui@hotmail.com>
+Date:   Tue Jul 6 00:08:18 2021 +0200
+
+    finish course: eda in python
+
+[33mcommit 3a099ee10ad31c630777c719d15ac7c38215e002[m
+Author: Bowen <bowen.sui@hotmail.com>
+Date:   Sat Jul 3 21:54:27 2021 +0200
+
+    chapter 1 finished
+
+[33mcommit 05bfdacaa985b1fbbb39a7e29e623d7219590737[m
+Author: Bowen <bowen.sui@hotmail.com>
+Date:   Sat Jul 3 16:23:13 2021 +0200
+
+    finish course: writing_functions_in_python
+
+[33mcommit 531c61e146629d47f628784927fdc43943e32b3e[m
+Author: Bowen <bowen.sui@hotmail.com>
+Date:   Fri Jul 2 10:56:35 2021 +0200
+
+    proejct done
+
+[33mcommit 7829dab38c963ab615b772b0ee14d1214deee033[m
+Author: Bowen <bowen.sui@hotmail.com>
+Date:   Fri Jul 2 10:41:57 2021 +0200
+
+    finish course: working_with_dates_and_times_in_python
+
+[33mcommit 82e9cd61a007e53915e16f44715750cccec144a3[m
+Author: Bowen <bowen.sui@hotmail.com>
+Date:   Thu Jul 1 15:47:05 2021 +0200
+
+    course: working with dates and times in python
+
+[33mcommit 718765c10975ce59e0ca423c820c07747e17ae09[m
+Author: Bowen <bowen.sui@hotmail.com>
+Date:   Tue Jun 29 19:22:55 2021 +0200
+
+    finish course: intermediate visualization with seaborn
+
+[33mcommit 612632be318180f6f001e3b4db78cd0e23c01f78[m
+Author: Bowen <bowen.sui@hotmail.com>
+Date:   Sun Jun 27 14:01:59 2021 +0200
+
+    finish course: data visualization with seaborn
+
+[33mcommit f89d3164b5c22e88aa7b99e115b735e35976a29e[m
+Author: Bowen <bowen.sui@hotmail.com>
+Date:   Wed Jun 23 15:18:13 2021 +0200
+
+    project: android apps sentiment analysis
+
+[33mcommit 14879e8058f59a67e4bdae29c301df6fe889001f[m
+Author: Bowen <bowen.sui@hotmail.com>
+Date:   Wed Jun 23 13:53:42 2021 +0200
+
+    finish course: joining data with pandas
+
+[33mcommit 4c7af908f4a54676378b6950ab8e94a80a43ee0b[m
+Author: Bowen <bowen.sui@hotmail.com>
+Date:   Tue Jun 22 21:11:34 2021 +0200
+
+    course joining data with pandas
+
+[33mcommit 9e6988208263490937a72442e95004e55398e7db[m
+Author: Bowen <bowen.sui@hotmail.com>
+Date:   Sun Jun 20 17:24:46 2021 +0200
+
+    finish course: Data Manipulation with pandas
+
+[33mcommit 78b0582e3aa9302ee796755697af8edc789dab7a[m
+Author: Bowen <bowen.sui@hotmail.com>
+Date:   Fri Jun 18 22:00:31 2021 +0200
+
+    finish course - introduction to deep learning in python
+
+[33mcommit 2178c159ed2bc26d4d0ba9bf274c0adb6d6ada37[m
+Author: Bowen <bowen.sui@hotmail.com>
+Date:   Wed Jun 16 14:15:14 2021 +0200
+
+    finish course - case study school budget
+
+[33mcommit ff6851a019fd775c4d24aaa7ff7aab7c83744c40[m
+Author: Bowen <bowen.sui@hotmail.com>
+Date:   Sun Jun 13 20:13:51 2021 +0200
+
+    finish course - linear classifiers
+
+[33mcommit 9f29b51e3550775b55a8e91a2fdac42c23e37e87[m
+Author: Bowen <bowen.sui@hotmail.com>
+Date:   Fri Jun 4 22:51:13 2021 +0200
+
+    complete course: supervised learning in python
+
+[33mcommit 9c92f689f21de2252b2c4869d7b56e161466f4d5[m
+Author: Bowen <bowen.sui@hotmail.com>
+Date:   Sun May 30 19:02:57 2021 +0200
+
+    finish course 5
+
+[33mcommit 23403a2a9443fbc39e4428f355d7f89c06edc76a[m
+Author: Bowen <bowen.sui@hotmail.com>
+Date:   Fri May 28 11:12:37 2021 +0200
+
+    finish course: 04 statistical simulation in python
+
+[33mcommit 962780289e65cca4f28971b2adff1ead477b132b[m
+Author: Bowen <bowen.sui@hotmail.com>
+Date:   Fri May 21 21:17:32 2021 +0200
+
+    finish course "introduction to linear modelling in python"
+
+[33mcommit 29ef43901b7e62a1c1abd2be76bd22a4076815b5[m
+Author: Bowen <bowen.sui@hotmail.com>
+Date:   Thu May 20 14:24:21 2021 +0200
+
+    review of course 1 and 2
+
+[33mcommit e6fc8d869843ebcb3f9f064260c493548e513adb[m
+Author: Bowen <bowen.sui@hotmail.com>
+Date:   Sun Mar 14 15:22:57 2021 +0100
+
+    linear modeling ch3
+
+[33mcommit 8cf5e312b5959b7cc1a1f32f041e452f262c908b[m
+Author: Bowen <bowen.sui@hotmail.com>
+Date:   Sun Mar 7 18:02:40 2021 +0100
+
+    course aws_boto completed
+
+[33mcommit e1a51d1f1e4aaedf3681f44fe1ff6dee6a1dfdfb[m
+Author: Bowen <bowen.sui@hotmail.com>
+Date:   Sat Mar 6 21:05:54 2021 +0100
+
+    course complete. introduction to shell
+    
+    course complete. introduction to shell
+
+[33mcommit ef4337e8645ad0fb2b3e706e04404b45d758ae77[m
+Author: Bowen <bowen.sui@hotmail.com>
+Date:   Wed Feb 24 23:09:52 2021 +0100
+
+    course statistical thinking 02 finished
+    
+    experiments with finches.
+
+[33mcommit b0884bad06cec9c8254660b872d5e1aef312c5c4[m
+Author: Bowen <bowen.sui@hotmail.com>
+Date:   Sat Feb 20 15:27:17 2021 +0100
+
+    statistical thinking 01 completed
+
+[33mcommit 32bb3c97e5e843f84c38a68891738cd05ccbb800[m
+Author: Bowen <bowen.sui@hotmail.com>
+Date:   Sun Feb 14 02:22:52 2021 +0100
+
+    update
+
+[33mcommit 39b9863034f6cf786137d31b96e75c5024986d53[m
+Author: Bowen <bowen.sui@hotmail.com>
+Date:   Sun Feb 14 02:18:28 2021 +0100
+
+    project. visualizing covid
+
+[33mcommit a08d4ce059639ea1b2e445ca66ba4b8966a0e22a[m
+Author: Bowen <bowen.sui@hotmail.com>
+Date:   Sun Feb 14 02:08:25 2021 +0100
+
+    Update notebook.ipynb
+
+[33mcommit c49aaf416adb496f241fa33bdd52230d8a4be4f6[m
+Author: Bowen <bowen.sui@hotmail.com>
+Date:   Sun Feb 14 02:07:07 2021 +0100
+
+    project exploring_cryptocurrency_market
+
+[33mcommit 3de9174cebda5261b5a9955c7ac785029b18ab83[m
+Author: Bowen <bowen.sui@hotmail.com>
+Date:   Mon Feb 8 22:40:27 2021 +0100
+
+    finish scrapy
+
+[33mcommit 5e3f80a398472a320da34918ad93c69c1b455844[m
+Author: Bowen <bowen.sui@hotmail.com>
+Date:   Sat Feb 6 19:48:17 2021 +0100
+
+    course cleaning_data_in_python
+
+[33mcommit 1462d02b7a0ee3b6113fd1e90173866e1d8acc59[m
+Author: Bowen <bowen.sui@hotmail.com>
+Date:   Fri Feb 5 01:00:52 2021 +0100
+
+    chapter 01 flat file. chapter 02 structured data.
+
+[33mcommit c225c12f84685bc5e235f0035bf546ee4b9372fe[m
+Author: Bowen <bowen.sui@hotmail.com>
+Date:   Wed Feb 3 21:48:50 2021 +0100
+
+    Initial commit
