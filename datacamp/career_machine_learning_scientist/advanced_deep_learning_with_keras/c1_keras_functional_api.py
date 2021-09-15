@@ -3,7 +3,7 @@ from keras.layers import Input, Dense
 from keras.models import Model
 from keras.utils import plot_model
 from sklearn.model_selection import train_test_split
-from data import load_basketball_data
+from data import load_games_tourney_data
 
 
 def build_a_model():
@@ -39,6 +39,7 @@ if __name__ == "__main__":
     model = build_a_model()
     # visualize_a_model(model)
 
-    df = load_basketball_data()
+
+    df = load_games_tourney_data()
     games_tourney_train, games_tourney_test = train_test_split(df, test_size=0.2)
     train_and_evaluate_a_model(model, games_tourney_train, games_tourney_test)
