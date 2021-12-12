@@ -125,6 +125,12 @@ venv.bak/
 # mkdocs documentation
 /site
 
+# PyCharm IDE settings
+.idea/
+
+# VSCode IDE settings
+.vscode/
+
 # mypy
 .mypy_cache/
 .dmypy.json
@@ -137,3 +143,5 @@ datacamp/ml_fundamentals_with_python/4_case_study_school_budgeting/data/TestData
 datacamp/ml_fundamentals_with_python/4_case_study_school_budgeting/data/SubmissionFormat.csv
 datacamp/skill_time_series_with_python/c5_ml_for_time_series_data_in_python/data/archive/
 datacamp/skill_time_series_with_python/c5_ml_for_time_series_data_in_python/data/archive.zip
+datacamp/marketing_analytics_with_python/03_market_basket_analysis_in_python/data/goodbooks-10k-master/
+
