@@ -33,3 +33,15 @@ def zhang(antecedent, consequent):
 
     # Return Zhang's metric
     return numerator / denominator
+
+
+def aggregate(onehot, item):
+	# Select the column headers for sign items in onehot
+	item_headers = [i for i in onehot.columns if i.lower().find(item)>=0]
+
+	# Select columns of sign items
+	item_columns = onehot[item_headers]
+
+	# Return category of aggregated items
+	return item_columns.sum(axis = 1) >= 1.0
+

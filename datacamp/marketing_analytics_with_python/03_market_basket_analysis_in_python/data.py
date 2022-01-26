@@ -1,4 +1,5 @@
 import pandas as pd
+from mlxtend.preprocessing import TransactionEncoder
 
 
 def prepare_books3_dataset():
@@ -30,3 +31,34 @@ def prepare_books5_dataset():
     books.columns = ["Hunger", "Potter", "Twilight", "Mockingbird",  "Gatsby"]
 
     return books
+
+
+def prepare_online_retail_data():
+    # df = pd.read_csv("data/test.csv")
+    df = pd.read_csv("data/online_retail.csv")
+    transactions = {}
+
+    for _, row in df.iterrows():
+        invoice_no = row["InvoiceNo"]
+        if invoice_no not in transactions:
+            transactions[invoice_no] = []
+
+        tran = str(row["Description"])
+        transactions[invoice_no].append(tran)
+
+    # print(transactions)
+
+    transactions_list = list(transactions.values())
+    transactions_list = transactions_list[:int(len(transactions_list)/3)]
+    return transactions_list
+
+
+def onehot_online_retail_data(transactions):
+    encoder = TransactionEncoder().fit(transactions)
+    onehot = encoder.transform(transactions)
+    onehot = pd.DataFrame(onehot, columns=encoder.columns_)
+
+    onehot = onehot.sample(frac=0.3)
+    print("onehot.shape", onehot.shape)
+
+    return onehot
