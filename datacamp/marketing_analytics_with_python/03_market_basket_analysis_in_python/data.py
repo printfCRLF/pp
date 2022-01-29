@@ -58,7 +58,7 @@ def onehot_online_retail_data(transactions):
     onehot = encoder.transform(transactions)
     onehot = pd.DataFrame(onehot, columns=encoder.columns_)
 
-    onehot = onehot.sample(frac=0.3)
+    onehot = onehot.sample(frac=0.1)
     print("onehot.shape", onehot.shape)
 
     return onehot

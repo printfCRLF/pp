@@ -35,6 +35,15 @@ def zhang(antecedent, consequent):
     return numerator / denominator
 
 
+def zhangs_rule2(rules):
+	PAB = rules['support'].copy()
+	PA = rules['antecedent support'].copy()
+	PB = rules['consequent support'].copy()
+	NUMERATOR = PAB - PA*PB
+	DENOMINATOR = np.max((PAB*(1-PA).values,PA*(PB-PAB).values), axis = 0)
+	return NUMERATOR / DENOMINATOR  
+
+
 def aggregate(onehot, item):
 	# Select the column headers for sign items in onehot
 	item_headers = [i for i in onehot.columns if i.lower().find(item)>=0]
